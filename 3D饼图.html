@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3D饼图</title>
+</head>
+
+<body>
+  <div id="container" style="height: 400px"></div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+  <script src="http://cdn.hcharts.cn/highcharts/highcharts-3d.js"></script>
+  <script src="http://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+  <script>
+    var chart = Highcharts.chart('container', {
+      chart: {
+        type: 'pie',
+        options3d: {
+          enabled: true,
+          alpha: 45,
+          beta: 0
+        }
+      },
+      title: {
+        text: '2014年某网站不同浏览器访问量占比'
+      },
+      credits: {
+        enabled: false,
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          depth: 35,
+          dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+          }
+        }
+      },
+      series: [{
+        type: 'pie',
+        name: '浏览器占比',
+        data: [
+          ['Firefox', 45.0],
+          ['IE', 26.8],
+          {
+            name: 'Chrome',
+            y: 12.8,
+            sliced: true,
+            selected: true
+          },
+          ['Safari', 8.5],
+          ['Opera', 6.2],
+          ['Others', 0.7]
+        ]
+      }]
+    });
+  </script>
+</body>
+
+</html>
