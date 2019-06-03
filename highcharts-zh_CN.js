@@ -33,7 +33,8 @@
       rangeSelectorTo: "结束时间",
       rangeSelectorZoom: "范围",
       zoomIn: "缩小",
-      zoomOut: "放大"
+      zoomOut: "放大",
+      viewFullscreen: '全屏显示'
     },
     global: {
       canvasToolsURL: protocol + "//cdn.hcharts.cn/highcharts/modules/canvas-tools.js",
