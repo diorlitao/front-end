@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>jOrgChart配置简单的组织结构</title>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script src="./jquery.jOrgChart.js"></script>
+  <link rel="stylesheet" href="./jquery.jOrgChart.css">
+  <!--样式-->
+  <style>
+    .jOrgChart .node {
+      background-color: yellowgreen;
+      display: inline-block;
+      width: 250px;
+      height: 180px;
+      z-index: 10;
+      margin: 0 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="org" style="display:none">
+    <li> 一级位置
+      <table border="1">
+        <thead>
+          <tr>
+            <th></th>
+            <th>未办结</th>
+            <th>常态落实</th>
+            <th>已办结</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>军委批示</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>军委办件</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>战区督办</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>其他督办</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>其他督办</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>下属二级菜单位置</li>
+        <li>下属二级 <ul>
+            <li>三级 </li>
+            <li>三级 <ul>
+                <li>四级</li>
+                <li>四级</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>下属二级</li>
+        <li>下属二级</li>
+        <li>下属二级</li>
+        <li>下属二级 <ul>
+            <li>三级 <ul>
+                <li>四级</li>
+              </ul>
+            </li>
+            <li>三级 <ul>
+                <li>四级 <ul>
+                    <li>五级</li>
+                    <li>五级</li>
+                    <li>五级</li>
+                    <li>五级</li>
+                  </ul>
+                </li>
+                <li>四级</li>
+                <li>四级</li>
+                <li>四级</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>下属二级 </li>
+      </ul>
+    </li>
+  </ul>
+  <div id="chart" class="orgChart">
+    <div class="jOrgChart"> </div>
+  </div>
+</body>
+<script>
+  $(document).ready(function () {
+    $("#org").jOrgChart({
+      chartElement: '#chart',
+      dragAndDrop: true
+    });
+  });
+</script>
+
+</html>
