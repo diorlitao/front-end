@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p title='选择你喜欢的水果'>你最喜欢的水果是？</p>
+  <ul>
+    <li title="苹果">苹果</li>
+    <li title="橘子">橘子</li>
+    <li title='菠萝'>菠萝</li>
+  </ul>
+
+  <script src="../jquery.js"></script>
+  <script>
+    // 获取ul里第2个li节点
+    var $li = $('ul li:eq(1)')
+    // 获取第二个li节点的文本内容
+    var li_txt = $li.text()
+    alert(li_txt)
+
+    // 属性
+    var p_title = $('p').attr('title')
+    alert(p_title)
+  </script>
+</body>
+
+</html>
