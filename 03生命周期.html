@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  created 实例创建完毕后调用，此阶段完成了数据观测，但尚未挂载，$el 尚不可用，数据初始化时使用
+  mounted el 挂载到实例后调用，一般第一个业务逻辑从这里开始
+  <div id="app"></div>
+  <script src="./vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        a: 2
+      },
+      created: function () {
+        // console.log(this.a)
+      },
+      mounted: function () {
+        console.log(this.$el)
+        this.$el.innerHTML = 'hello'
+      }
+    })
+  </script>
+</body>
+
+</html>
