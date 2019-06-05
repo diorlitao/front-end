@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p v-if='show'>显示这段文本</p>
+    <button @click="handleClose">{{msg}}</button>
+    <a :href="url">链接</a>
+    <img :src="imgUrl">
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        show: true,
+        msg: '点击隐藏',
+        url: 'www.github.com',
+        imgUrl: 'www.baidu.com'
+      },
+      methods: {
+        handleClose: function () {
+          this.show = !this.show
+          if (this.show) {
+            this.msg = '点击隐藏'
+          } else {
+            this.msg = '点击显示'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
