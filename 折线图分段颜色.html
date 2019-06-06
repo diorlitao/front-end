@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="width:60%;height: 60%"></div>
+  <script type="text/javascript" src="./echarts.min.js"></script>
+  <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    option = null;
+    option = {
+      title: {
+        text: 'echarts的折线图分段显示不同的颜色',
+        left: 'center',
+        link: 'http://www.baidu.com'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c}'
+      },
+      legend: {
+        left: 'left',
+        data: ['指数']
+      },
+      xAxis: {
+        type: 'category',
+        name: '日期',
+        splitLine: {
+          show: false
+        },
+        data: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日']
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      yAxis: {
+        type: 'log',
+        name: '数量'
+      },
+      // 分段显示不同颜色的关键代码，使用series中的多个数据对象来进行数据展示
+      series: [{
+          name: '指数',
+          type: 'line',
+          data: []
+        },
+        {
+          name: '指数',
+          type: 'line',
+          data: [],
+          lineStyle: {
+            color: '#00FF00'
+          }
+        }
+      ]
+    };
+    if (option && typeof option === "object") {
+      var startTime = +new Date();
+      option.series[0].data = [4, 8, 16, 32, 64, '-', '-'];
+      option.series[1].data = ['-', '-', '-', '-', 64, 128, 256];
+      myChart.setOption(option, true);
+    }
+  </script>
+</body>
+
+</html>
