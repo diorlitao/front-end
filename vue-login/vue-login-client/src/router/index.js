@@ -6,6 +6,7 @@ const index = () => import('@/components/Index')
 Vue.use(Router)
 
 export default new Router({
+  // 配置路由
   routes: [{
     path: '/login',
     name: 'login',

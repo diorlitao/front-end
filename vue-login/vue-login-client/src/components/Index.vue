@@ -1,6 +1,7 @@
 <template>
   <div class="login">
     首页页面
+    用户信息{{this.$store.state.userinfo}}
   </div>
 </template>
 
